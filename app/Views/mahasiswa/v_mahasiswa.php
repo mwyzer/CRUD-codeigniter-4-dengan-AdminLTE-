@@ -1,17 +1,18 @@
 <div class="col-md-12">
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Primary</h3>
+  <div class="card card-primary">
+    <div class="card-header">
+      <h3 class="card-title"><?= $judul ?></h3>
 
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                </div>
-                <!-- /.card-tools -->
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse">
+            <i class="fas fa-minus"></i>
+          </button>                 
+    </div>
+  </div>
+      <div class="card-body">
+        <a href="<?= base_url('Mahasiswa/Tambah') ?>" class="btn btn-flat brn-primary btn-sm justified ">
+                    <i class="fas fa-plus"> Tambah Data Mahasiswa</i>
+                  </a>
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -29,7 +30,7 @@
                             <td><?= $no++ ?></td>
                             <td><?= $value['nim']?></td>
                             <td><?= $value['nama_mahasiswa']?></td>
-                            <td><?= $value['tempat_lahir'] ?>, <?= $value['tanggal_lahir'] ?></td>
+                            <td><?= $value['tempat_lahir'] ?>, <?= date('d m Y',strtotime($value['tanggal_lahir'])) ?></td>
                             <td><?= $value['jenis_kelamin'] == 'L' ? 'Laki-laki' : 'Perempuan' ?></td>
                             <td></td>
                         </tr>
@@ -37,7 +38,7 @@
                     </tbody>
                 </table>
               </div>
-              <!-- /.card-body -->
+
             </div>
-            <!-- /.card -->
+
           </div>

@@ -14,7 +14,7 @@ class Mahasiswa extends BaseController
 
     public function index()
     {
-            $data = [
+        $data = [
             'judul' => 'Mahasiswa',
             'page' => 'mahasiswa/v_mahasiswa',
             'menu' => 'masterdata',
@@ -22,5 +22,33 @@ class Mahasiswa extends BaseController
             'mhs' => $this->ModelMahasiswa->AllData(),
         ];
         return view('v_template', $data);
+    }
+
+    public function tambah()
+    {
+        $data = [
+            'judul' => 'Tambah Mahasiswa',
+            'page' => 'mahasiswa/v_tambah',
+            'menu' => 'masterdata',
+            'submenu' => 'mahasiswa',
+        ];
+        return view('v_template', $data);
+    }
+    public function InsertData()
+    {
+        if($this -> validate([
+            nim => [
+                'label' => 'Nim Mahasiswa',
+                'rules' => 'required|is_unique[tbl_mahasiswa.nim]', 
+                'errors' => [
+                    'required' => '{field} Wajib diisi!',
+                    'is_unique' => '{field}Sudah ada, Input NIM yang lainnya.',
+                ],
+            ],
+        ])) {
+        } else {
+
+        }
+        
     }
 }

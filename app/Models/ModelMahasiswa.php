@@ -10,4 +10,9 @@ class ModelMahasiswa extends Model
    {
     return $this->db->table('tbl_mahasiswa')->Get()-> getResultArray();
    }
+   
+   public function InsertData($data)
+   {
+      $this->db->table('tbl_mahasiswa')->insert($data);
+   }
 }
