@@ -58,6 +58,5 @@ class Mahasiswa extends BaseController
             session()->setFlashdata('errors', \Config\Services::validation()->getErrors());
             return redirect()->to(base_url('Mahasiswa/Tambah'))->withInput('validation',\Config\Services::validation());
         }
-       
     }
 }

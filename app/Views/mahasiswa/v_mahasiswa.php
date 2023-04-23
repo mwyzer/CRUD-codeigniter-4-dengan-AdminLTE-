@@ -1,28 +1,26 @@
 <div class="col-md-12">
-  <div class="card card-primary">
+  <div class="card card-outline card-primary">
     <div class="card-header">
       <h3 class="card-title"><?= $judul ?></h3>
 
         <div class="card-tools">
-          <button type="button" class="btn btn-tool" data-card-widget="collapse">
-            <i class="fas fa-minus"></i>
-          </button>                 
+          <a href="<?= base_url('Mahasiswa/Tambah') ?>" class="btn btn-flat btn-primary btn-xm">
+            <i class="fas fa-plus"></i>Tambah
+          </a>
+        </div>                 
     </div>
   </div>
       <div class="card-body">
-        <a href="<?= base_url('Mahasiswa/Tambah') ?>" class="btn btn-flat brn-primary btn-sm justified ">
-                    <i class="fas fa-plus"> Tambah Data Mahasiswa</i>
-                  </a>
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>NIM</th>
-                            <th>Nama Mahasiswa</th>
-                            <th>Tempat, Tanggal Lahir</th>
-                            <th>Jenis Kelamin</th>
-                            <th>Aksi</th>
-                        </tr>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>NIM</th>
+              <th>Nama Mahasiswa</th>
+              <th>Tempat, Tanggal Lahir</th>
+              <th>Jenis Kelamin</th>
+              <th>Aksi</th>
+            </tr>
                     </thead>
                     <tbody>
                         <?php $no = 1; foreach ($mhs as $key => $value) {?>
