@@ -4,6 +4,11 @@
       <h3 class="card-title"><?= $judul ?></h3>
     </div>
         <div class="card-body">
+            <?php
+            session();
+            $validation = \Config\Services::validation();
+            ?>
+
             <?php echo form_open('Mahasiswa/InsertData') ?>
 
             <div class="row">
@@ -11,12 +16,14 @@
                     <div class="form-group">
                         <label>NIM</label>
                         <input name="nim" class="form-control">
+                        <p class="text-danger"><?= ($validation->hasError('nim')) ? $validation->getError('nim') : '' ?></p>
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label>Nama Mahasiswa</label>
-                        <input name="nim" class="form-control">
+                        <input name="nama_mahasiswa" class="form-control">
+                        <p class="text-danger"><?= ($validation->hasError('nama_mahasiswa')) ? $validation->getError('nama_mahasiswa') : '' ?></p>
                     </div>
                 </div>
             </div>
